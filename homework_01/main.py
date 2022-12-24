@@ -5,7 +5,7 @@
 import platform
 
 
-def power_numbers(numbers: list):
+def power_numbers(*args):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
@@ -13,13 +13,13 @@ def power_numbers(numbers: list):
     <<< [1, 4, 25, 49]
     """
     result = []
-    for item in numbers:
-        result.append(item * item)
+    for item in args:
+        result.append(item ** 2)
     return result
 
 
 numbers = [1, 2, 3, 4, 5, 6, 7]
-assert power_numbers(numbers) == [1, 4, 9, 16, 25, 36, 49]
+assert power_numbers(1, 2, 3, 4, 5, 6, 7) == [1, 4, 9, 16, 25, 36, 49]
 
 # filter types
 ODD = "odd"
