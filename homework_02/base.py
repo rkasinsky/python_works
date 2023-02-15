@@ -25,11 +25,11 @@ class Vehicle:
         if distance <= (self.fuel / self.fuel_consumption) and self.fuel > 0:
             self.fuel = self.fuel - distance * self.fuel_consumption
         else:
-            raise NotEnoughFuel
+            raise NotEnoughFuel(self.fuel)
 
 
-my_car = Vehicle(1500, 50, 15)
-print(f'my_car.fuel: {my_car.fuel}')
-my_car.fuel = 0
-print(f'my_car.fuel: {my_car.fuel}')
-my_car.start()
+# my_car = Vehicle(1500, 50, 15)
+# print(f'my_car.fuel: {my_car.fuel}')
+# my_car.fuel = 0
+# print(f'my_car.fuel: {my_car.fuel}')
+# my_car.move(5)

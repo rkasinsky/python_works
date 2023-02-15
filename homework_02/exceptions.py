@@ -14,8 +14,10 @@ class LowFuelError(Exception):
 
 
 class NotEnoughFuel(Exception):
-    def __init__(self, text):
-        self.txt = "Fuel level is not enough"
+    def __init__(self, fuel, text="Fuel level is not enough"):
+        self.fuel = fuel
+        self.txt = text
+        super().__init__(self.txt)
 
 
 class CargoOverload(Exception):
