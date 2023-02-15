@@ -19,10 +19,17 @@ class Vehicle:
         elif self.started and self.fuel > 0:
             pass
         else:
-            raise LowFuelError
+            raise LowFuelError(self.fuel)
 
     def move(self, distance):
         if distance <= (self.fuel / self.fuel_consumption) and self.fuel > 0:
             self.fuel = self.fuel - distance * self.fuel_consumption
         else:
             raise NotEnoughFuel
+
+
+my_car = Vehicle(1500, 50, 15)
+print(f'my_car.fuel: {my_car.fuel}')
+my_car.fuel = 0
+print(f'my_car.fuel: {my_car.fuel}')
+my_car.start()
