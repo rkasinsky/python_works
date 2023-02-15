@@ -21,5 +21,7 @@ class NotEnoughFuel(Exception):
 
 
 class CargoOverload(Exception):
-    def __init__(self, text):
-        self.txt = "Cargo is overloaded"
+    def __init__(self, load, text="Cargo is overloaded"):
+        self.txt = text
+        self.load = load
+        super().__init__(self.txt)

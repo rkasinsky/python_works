@@ -26,10 +26,3 @@ class Vehicle:
             self.fuel = self.fuel - distance * self.fuel_consumption
         else:
             raise NotEnoughFuel(self.fuel)
-
-
-# my_car = Vehicle(1500, 50, 15)
-# print(f'my_car.fuel: {my_car.fuel}')
-# my_car.fuel = 0
-# print(f'my_car.fuel: {my_car.fuel}')
-# my_car.move(5)
